@@ -1,12 +1,24 @@
-# Bootcamp Express.js — Centro de Rehabilitaución Física.
+# Catálogo con Reporte de Sesiones — Centro de Rehabilitación Física
 
-Repositorio con los ejercicios, prácticas y proyectos desarrollados durante el bootcamp de backend con Node.js y Express.js.
+Entrega para el proyecto semanal 01: Node.js Fundamentals.
 
-## 📁 Estructura del Repositorio
+## Dominio asignado
+
+**Centro de Rehabilitación Física** — recurso `Session` (`id`, `patientName`, `therapistName`, `category`, `exercise`, `price`, `active`).
+
+## Estructura del Proyecto
 
 ```text
 .
-├── bootcamp/
-│   ├── week-01-nodejs_fundamentals/   # Fundamentos de Node.js, ESM, TypeScript y async/await
-│   └── ...                            # Siguientes semanas
+├── data/
+│   └── sessions.json       # Datos iniciales de sesiones de rehabilitación (min. 10)
+├── output/
+│   └── report.json         # Reporte final generado en formato JSON
+├── src/
+│   ├── fileManager.ts      # Lectura y escritura de archivos usando fs/promises
+│   ├── index.ts            # Punto de entrada y manejo del CLI (process.argv)
+│   ├── processor.ts        # Cálculo de métricas y filtrado por categoría
+│   └── types.ts            # Tipos e interfaces explícitas en TypeScript
+├── package.json
+├── tsconfig.json
 └── README.md

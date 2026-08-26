@@ -1,0 +1,92 @@
+[
+  {
+    "id": "SES-001",
+    "patientName": "Carlos Mendoza",
+    "therapistName": "Dra. Elena Gómez",
+    "category": "fisioterapia",
+    "exercise": "Rehabilitación de rodilla",
+    "price": 45.0,
+    "active": true
+  },
+  {
+    "id": "SES-002",
+    "patientName": "Ana María Torres",
+    "therapistName": "Dr. Ricardo Silva",
+    "category": "terapia-ocupacional",
+    "exercise": "Movilidad de muñeca y mano",
+    "price": 50.0,
+    "active": true
+  },
+  {
+    "id": "SES-003",
+    "patientName": "Jorge Ramírez",
+    "therapistName": "Dra. Elena Gómez",
+    "category": "neurologica",
+    "exercise": "Estimulación de marcha",
+    "price": 75.0,
+    "active": false
+  },
+  {
+    "id": "SES-004",
+    "patientName": "Luisa Fernández",
+    "therapistName": "Lic. Mateo Ríos",
+    "category": "fisioterapia",
+    "exercise": "Fortalecimiento lumbar",
+    "price": 40.0,
+    "active": true
+  },
+  {
+    "id": "SES-005",
+    "patientName": "Sofía Castro",
+    "therapistName": "Dr. Ricardo Silva",
+    "category": "deportiva",
+    "exercise": "Readaptación de hombro",
+    "price": 60.0,
+    "active": true
+  },
+  {
+    "id": "SES-006",
+    "patientName": "Miguel Ángel López",
+    "therapistName": "Lic. Mateo Ríos",
+    "category": "deportiva",
+    "exercise": "Descarga muscular y estiramientos",
+    "price": 35.0,
+    "active": false
+  },
+  {
+    "id": "SES-007",
+    "patientName": "Camila Vargas",
+    "therapistName": "Dra. Elena Gómez",
+    "category": "fisioterapia",
+    "exercise": "Reeducación postural global",
+    "price": 55.0,
+    "active": true
+  },
+  {
+    "id": "SES-008",
+    "patientName": "Pedro Gutiérrez",
+    "therapistName": "Dr. Ricardo Silva",
+    "category": "neurologica",
+    "exercise": "Control de equilibrio y coordinación",
+    "price": 80.0,
+    "active": true
+  },
+  {
+    "id": "SES-009",
+    "patientName": "Mariana Suárez",
+    "therapistName": "Lic. Mateo Ríos",
+    "category": "terapia-ocupacional",
+    "exercise": "Entrenamiento de actividades diarias",
+    "price": 48.0,
+    "active": true
+  },
+  {
+    "id": "SES-010",
+    "patientName": "David Morales",
+    "therapistName": "Dra. Elena Gómez",
+    "category": "deportiva",
+    "exercise": "Electroestimulación y crioterapia",
+    "price": 65.0,
+    "active": false
+  }
+]

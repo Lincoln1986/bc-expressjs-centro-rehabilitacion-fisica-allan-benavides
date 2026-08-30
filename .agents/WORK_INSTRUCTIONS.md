@@ -3,13 +3,13 @@
 ## 🏗️ Estructura de Repositorios
 
 ### Repositorio Guía (referencia)
-- **Ruta**: `C:\Users\sena\Documents\NALLA\Bootcamps\bc-expressjs`
+- **Ruta**: `C:\Users\sena\Documents\Bootcamps\bc-expressjs`
 - **Propósito**: Fuente de verdad para todo el contenido del bootcamp
 - **Contenido**: Semanas 01-16 con teoría, prácticas, proyectos y rúbricas
 - **Acceso**: Solo lectura — NO editar directamente
 
 ### Repositorio Personal (desarrollo)
-- **Ruta**: `C:\Users\sena\Documents\NALLA\Bootcamps\bc-expressjs-centro-rehabilitacion-fisica-allan-benavides`
+- **Ruta**: `C:\Users\sena\Documents\Bootcamps\bc-expressjs-centro-rehabilitacion-fisica-allan-benavides`
 - **Propósito**: Donde se desarrollan y entregan las semanas/actividades
 - **GitHub**: [Repositorio remoto](https://github.com/allan-benavides/bc-expressjs-centro-rehabilitacion-fisica-allan-benavides)
 
@@ -27,6 +27,8 @@
 | `sessions` | Sesiones de rehabilitación programadas |
 | `exercises` | Ejercicios terapéuticos asignados a pacientes |
 
+**Nota**: Para información detallada del dominio, revisar la rama `week-01`.
+
 ---
 
 ## 🌿 Método de Entrega por Ramas
@@ -34,13 +36,19 @@
 Cada semana se entrega en una **rama separada** con este formato:
 
 ```
-week-XX-nombre_semana
+week-XX
 ```
 
-**Ejemplo**:
-- `week-01-nodejs_fundamentals`
-- `week-02-express_intro`
-- `week-03-rest_api_arquitectura`
+**Ramas existentes**:
+| Rama | Estado |
+|------|--------|
+| `main` | Rama principal |
+| `week-01` | ✅ Completada |
+| `week-02` | ✅ Completada |
+| `week-03` | ✅ Completada |
+| `week-04` | ✅ Completada |
+| `week-05` | ✅ Completada |
+| `week-06` | ⏳ Pendiente |
 
 ### Flujo de trabajo
 
@@ -49,13 +57,6 @@ week-XX-nombre_semana
 3. **Crear una carpeta** con el mismo nombre de la semana
 4. **Desarrollar** todo lo solicitado en esa semana
 5. **Subir la rama** a GitHub para entrega
-
-### Ramas existentes
-
-| Rama | Estado |
-|------|--------|
-| `main` | Rama principal (protegida) |
-| `week-01` | ✅ Completada (semana 01) |
 
 ---
 
@@ -80,13 +81,13 @@ bc-expressjs/bootcamp/week-XX-nombre_semana/
 
 ```bash
 # Navegar al repositorio personal
-cd C:\Users\sena\Documents\NALLA\Bootcamps\bc-expressjs-centro-rehabilitacion-fisica-allan-benavides
+cd C:\Users\sena\Documents\Bootcamps\bc-expressjs-centro-rehabilitacion-fisica-allan-benavides
 
 # Crear y cambiar a la nueva rama
-git checkout -b week-XX-nombre_semana
+git checkout -b week-XX
 
 # Crear la carpeta de la semana
-mkdir week-XX-nombre_semana
+mkdir week-XX
 ```
 
 ### Paso 3: Desarrollar adaptando al dominio
@@ -102,7 +103,7 @@ mkdir week-XX-nombre_semana
 ```bash
 git add .
 git commit -m "feat: week-XX — [descripción breve]"
-git push origin week-XX-nombre_semana
+git push origin week-XX
 ```
 
 ---
@@ -118,6 +119,7 @@ git push origin week-XX-nombre_semana
 - Express 5
 - TypeScript 5.x (strict mode)
 - Prisma (cuando aplique)
+- MongoDB + Mongoose (semana 06+)
 - Zod (validación)
 - Jest + Supertest (testing)
 
@@ -141,7 +143,7 @@ src/
 - **Nomenclatura**: PascalCase para tipos, camelCase para funciones
 - **Archivos**: kebab-case para rutas (`patient.routes.ts`)
 - **Tipos**: Interfaces para dominio, DTOs para transferencia
-- **PKs**: `id String @id @default(uuid()) @db.Uuid` (en Prisma)
+- **PKs**: `id String @id @default(uuid()) @db.Uuid` (en Prisma) o `ObjectId` (en Mongoose)
 
 ### Contratos de Respuesta
 ```json
@@ -168,7 +170,7 @@ src/
 ## 📊 Estructura por Semana (entrega)
 
 ```
-week-XX-nombre_semana/
+week-XX/
 ├── README.md              # Descripción de tu implementación
 ├── src/
 │   ├── app.ts
@@ -225,4 +227,4 @@ week-XX-nombre_semana/
 
 ---
 
-_Creado: 2026-08-25 | Última actualización: 2026-08-25_
+_Creado: 2026-08-25 | Última actualización: 2026-08-30_

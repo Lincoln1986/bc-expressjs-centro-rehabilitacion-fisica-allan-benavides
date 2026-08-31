@@ -1,142 +1,168 @@
-# 🏥 Bootcamp Express.js — Centro de Rehabilitación Física
+# 🏥 Semana 06 — MongoDB + Mongoose ORM
 
-Repositorio con los ejercicios, prácticas y proyectos desarrollados durante el bootcamp de backend con Node.js y Express.js.
+## Centro de Rehabilitación Física — API con MongoDB
 
-**Dominio asignado**: Centro de Rehabilitación Física
-
----
-
-## 🎯 Dominio del Proyecto
-
-Gestión de sesiones de rehabilitación física para un centro especializado.
-
-| Entidad | Descripción |
-|---------|-------------|
-| `patients` | Pacientes del centro de rehabilitación |
-| `therapists` | Terapeutas/fisioterapeutas que atienden pacientes |
-| `sessions` | Sesiones de rehabilitación programadas |
-| `exercises` | Ejercicios terapéuticos asignados a pacientes |
+Entrega del proyecto semanal 06: **MongoDB + Mongoose ORM** con el dominio asignado de **Centro de Rehabilitación Física**.
 
 ---
 
-## 📊 Semanas Completadas
+## 🎯 Objetivo
 
-| Semana | Tema | Estado | Rama |
-|--------|------|--------|------|
-| 01 | Node.js Fundamentals | ✅ Completada | `week-01` |
-| 02 | Express Intro | ✅ Completada | `week-02` |
-| 03 | REST API Arquitectura en Capas | ✅ Completada | `week-03` |
-| 04 | Validación y Error Handling | ✅ Completada | `week-04` |
-| 05 | PostgreSQL + Prisma ORM | ✅ Completada | `week-05` |
-| 06 | MongoDB + Mongoose | ⏳ Pendiente | — |
-| 07 | Autenticación JWT | ⏳ Pendiente | — |
-| 08 | Autorización y Seguridad | ⏳ Pendiente | — |
-| 09 | Testing | ⏳ Pendiente | — |
-| 10 | Uploads y Emails | ⏳ Pendiente | — |
-| 11 | WebSockets | ⏳ Pendiente | — |
-| 12 | Caching y Performance | ⏳ Pendiente | — |
-| 13 | OpenAPI y Swagger | ⏳ Pendiente | — |
-| 14 | Docker | ⏳ Pendiente | — |
-| 15 | CI/CD y Deployment | ⏳ Pendiente | — |
-| 16 | Proyecto Final | ⏳ Pendiente | — |
+Implementar una API REST completa usando Express 5, TypeScript, Mongoose y MongoDB, con dos entidades relacionadas, paginación, manejo de errores específicos de MongoDB y seed de datos.
 
 ---
 
-## 🛠️ Stack Tecnológico
+## 🏗️ Dominio
 
-| Tecnología | Versión | Uso |
-|------------|---------|-----|
-| Node.js | 22+ | Runtime |
-| TypeScript | 5.8 | Tipado estático |
-| Express | 5.1 | Framework HTTP |
-| Prisma | 6.8 | ORM (PostgreSQL) |
-| Zod | 3.24 | Validación de datos |
-| Winston | 3.17 | Logging |
-| Morgan | 1.10 | HTTP logging |
-| PostgreSQL | 16 | Base de datos relacional |
+**Centro de Rehabilitación Física**
 
----
-
-## 📁 Estructura del Repositorio
+### Diagrama de Entidades
 
 ```
+┌─────────────────────┐       ┌─────────────────────────────┐
+│     Therapist       │       │         Session             │
+├─────────────────────┤       ├─────────────────────────────┤
+│ _id: ObjectId       │◄──1:N─│ _id: ObjectId               │
+│ name                │       │ patientName                 │
+│ specialty           │       │ category                    │
+│ email (unique)      │       │ exercise                    │
+│ phone               │       │ price                       │
+│ active              │       │ active                      │
+│ createdAt           │       │ scheduledAt                 │
+│ updatedAt           │       │ notes                       │
+└─────────────────────┘       │ therapist (ref → Therapist) │
+                              │ createdAt                   │
+                              │ updatedAt                   │
+                              └─────────────────────────────┘
+```
+
+---
+
+## 📁 Estructura del Proyecto
+
+```text
 .
-├── week-01/              # Node.js Fundamentals — CLI processor
-├── week-02/              # Express Intro — CRUD en memoria
-├── week-03/              # REST API — Arquitectura en 4 capas
-├── week-04/              # Validación Zod + AppError + Winston
-├── week-05/              # PostgreSQL + Prisma ORM
-├── .agents/
-│   └── WORK_INSTRUCTIONS.md  # Instrucciones de trabajo
-└── README.md
+├── docker-compose.yml           # MongoDB 7
+├── src/
+│   ├── lib/mongoose.ts          # connectDB / disconnectDB
+│   ├── models/
+│   │   ├── therapist.model.ts   # Schema Therapist
+│   │   └── session.model.ts     # Schema Session (con ref)
+│   ├── errors/AppError.ts       # Clase AppError
+│   ├── middlewares/              # errorHandler + notFound
+│   ├── schemas/
+│   │   ├── therapist.schema.ts  # Zod validation
+│   │   └── session.schema.ts    # Zod validation con ObjectId
+│   ├── repositories/             # Mongoose CRUD + error handling
+│   ├── services/                 # Lógica de negocio
+│   ├── controllers/              # Thin controllers
+│   ├── routes/                   # Mapeo URL → controller
+│   ├── app.ts                    # Config Express
+│   ├── server.ts                 # Entry point
+│   └── seed.ts                   # Datos demo
+├── package.json
+├── tsconfig.json
+└── .env.example
 ```
 
 ---
 
-## 🏗️ Arquitectura Actual (Semana 05+)
+## ✅ Requisitos Cumplidos
 
-```
-src/
-├── lib/prisma.ts            # Singleton PrismaClient
-├── config/logger.ts         # Winston + Morgan
-├── errors/AppError.ts       # Errores operacionales
-├── middlewares/              # errorHandler (4 params) + notFound
-├── schemas/                 # Zod validation (create + update)
-├── repositories/             # Prisma CRUD + manejo P2025/P2002
-├── services/                 # Lógica de negocio
-├── controllers/              # Thin controllers (req → service → res)
-├── routes/                   # Mapeo URL → controller
-├── app.ts                    # Configuración Express + middleware order
-└── server.ts                 # Entry point + graceful shutdown
-```
+| Requisito | Estado |
+|-----------|--------|
+| 2 modelos Mongoose (Therapist + Session) | ✅ |
+| Referencia ObjectId con `ref` | ✅ |
+| `{ timestamps: true }` en ambos schemas | ✅ |
+| Campo `unique` (email) | ✅ |
+| Seed con 3 terapeutas + 5 sesiones | ✅ |
+| Manejo de errores 11000 → 409 | ✅ |
+| Manejo de CastError → 400 | ✅ |
+| Paginación con `?page&limit` | ✅ |
+| Validación Zod con `safeParse()` | ✅ |
+| `.lean()` en queries de lectura | ✅ |
+| `.populate('therapist')` en Session | ✅ |
 
 ---
 
-## 🚀 Cómo Ejecutar
+## 🛠️ Iniciar el Proyecto
 
 ```bash
-# Clonar repositorio
-git clone https://github.com/Lincoln1986/bc-expressjs-centro-rehabilitacion-fisica-allan-benavides.git
-cd bc-expressjs-centro-rehabilitacion-fisica-allan-benavides
-
-# Ver ramas disponibles
-git branch -a
-
-# Cambiar a la semana que quieras trabajar
-git checkout week-05
-
-# Levantar PostgreSQL (solo semana 05+)
+# 1. Levantar MongoDB
 docker compose up -d
 
-# Instalar dependencias
+# 2. Instalar dependencias
 pnpm install
 
-# Para semanas 05+: configurar base de datos
+# 3. Copiar variables de entorno
 cp .env.example .env
-pnpm dlx prisma migrate dev --name init
-pnpm dlx prisma db seed
 
-# Ejecutar
+# 4. Ejecutar seed
+pnpm seed
+
+# 5. Iniciar servidor
 pnpm dev
 ```
 
 ---
 
-## 📋 Convenciones
+## 🧪 Endpoints
 
-- **Ramas**: `week-XX` (una rama por semana)
-- **Paquetes**: Solo `pnpm` (nunca npm/yarn)
-- **Código**: Inglés (variables, funciones)
-- **Documentación**: Español (READMEs)
-- **PKs**: UUID (`@default(uuid()) @db.Uuid`)
-- **Arquitectura**: 4 capas (routes → controllers → services → repositories)
+### Therapists (Entidad Secundaria)
+
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| GET | `/api/v1/therapists?page=1&limit=10` | Listar con paginación |
+| GET | `/api/v1/therapists/:id` | Obtener por ID |
+| POST | `/api/v1/therapists` | Crear (validar con Zod) |
+| PUT | `/api/v1/therapists/:id` | Actualizar |
+| DELETE | `/api/v1/therapists/:id` | Eliminar |
+
+### Sessions (Entidad Principal)
+
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| GET | `/api/v1/sessions?page=1&limit=10` | Listar con paginación + populate |
+| GET | `/api/v1/sessions/:id` | Obtener por ID con terapeuta |
+| POST | `/api/v1/sessions` | Crear (validar con Zod) |
+| PUT | `/api/v1/sessions/:id` | Actualizar |
+| DELETE | `/api/v1/sessions/:id` | Eliminar |
 
 ---
 
-## 🔗 Repositorio Guía
+## 📋 Ejemplos de Request
 
-El contenido pedagógico (teoría, prácticas, proyectos) se encuentra en el repositorio guía del bootcamp.
+### Crear Therapist
+```bash
+POST /api/v1/therapists
+Content-Type: application/json
+
+{
+  "name": "Dr. Nuevo Terapeuta",
+  "specialty": "Fisioterapia Pediátrica",
+  "email": "nuevo@rehabilitacion.com",
+  "phone": "+57 300 456 7890"
+}
+```
+
+### Crear Session
+```bash
+POST /api/v1/sessions
+Content-Type: application/json
+
+{
+  "patientName": "Nuevo Paciente",
+  "category": "Recuperación de Tornillo",
+  "exercise": "Movilización articular",
+  "price": 70000,
+  "therapist": "64f1a2b3c4d5e6f7a8b9c0d1"
+}
+```
 
 ---
 
-_Última actualización: Agosto 2026_
+## 🔗 Navegación
+
+| Anterior | Actual | Siguiente |
+|----------|--------|-----------|
+| ← Semana 05: PostgreSQL + Prisma | **Semana 06: MongoDB + Mongoose** | Semana 07: Autenticación JWT → |

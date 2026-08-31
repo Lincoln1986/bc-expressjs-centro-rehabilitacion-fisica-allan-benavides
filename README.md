@@ -28,7 +28,7 @@ Gestión de sesiones de rehabilitación física para un centro especializado.
 | 03 | REST API Arquitectura en Capas | ✅ Completada | `week-03` |
 | 04 | Validación y Error Handling | ✅ Completada | `week-04` |
 | 05 | PostgreSQL + Prisma ORM | ✅ Completada | `week-05` |
-| 06 | MongoDB + Mongoose | ⏳ Pendiente | — |
+| 06 | MongoDB + Mongoose | ✅ Completada | `week-06` |
 | 07 | Autenticación JWT | ⏳ Pendiente | — |
 | 08 | Autorización y Seguridad | ⏳ Pendiente | — |
 | 09 | Testing | ⏳ Pendiente | — |
@@ -49,11 +49,13 @@ Gestión de sesiones de rehabilitación física para un centro especializado.
 | Node.js | 22+ | Runtime |
 | TypeScript | 5.8 | Tipado estático |
 | Express | 5.1 | Framework HTTP |
-| Prisma | 6.8 | ORM (PostgreSQL) |
+| Prisma | 6.8 | ORM (PostgreSQL) — Semana 05 |
+| Mongoose | 9.4 | ODM (MongoDB) — Semana 06+ |
 | Zod | 3.24 | Validación de datos |
 | Winston | 3.17 | Logging |
 | Morgan | 1.10 | HTTP logging |
 | PostgreSQL | 16 | Base de datos relacional |
+| MongoDB | 7 | Base de datos NoSQL |
 
 ---
 
@@ -66,6 +68,7 @@ Gestión de sesiones de rehabilitación física para un centro especializado.
 ├── week-03/              # REST API — Arquitectura en 4 capas
 ├── week-04/              # Validación Zod + AppError + Winston
 ├── week-05/              # PostgreSQL + Prisma ORM
+├── week-06/              # MongoDB + Mongoose ORM
 ├── .agents/
 │   └── WORK_INSTRUCTIONS.md  # Instrucciones de trabajo
 └── README.md
@@ -73,21 +76,27 @@ Gestión de sesiones de rehabilitación física para un centro especializado.
 
 ---
 
-## 🏗️ Arquitectura Actual (Semana 05+)
+## 🏗️ Arquitectura Actual (Semana 06+)
 
 ```
 src/
-├── lib/prisma.ts            # Singleton PrismaClient
+├── lib/
+│   ├── prisma.ts            # Singleton PrismaClient (Semana 05)
+│   └── mongoose.ts          # connectDB / disconnectDB (Semana 06)
 ├── config/logger.ts         # Winston + Morgan
 ├── errors/AppError.ts       # Errores operacionales
 ├── middlewares/              # errorHandler (4 params) + notFound
+├── models/                  # Mongoose schemas (Semana 06+)
+│   ├── therapist.model.ts
+│   └── session.model.ts
 ├── schemas/                 # Zod validation (create + update)
-├── repositories/             # Prisma CRUD + manejo P2025/P2002
+├── repositories/             # CRUD + manejo de errores
 ├── services/                 # Lógica de negocio
 ├── controllers/              # Thin controllers (req → service → res)
 ├── routes/                   # Mapeo URL → controller
 ├── app.ts                    # Configuración Express + middleware order
-└── server.ts                 # Entry point + graceful shutdown
+├── server.ts                 # Entry point + graceful shutdown
+└── seed.ts                   # Datos de prueba
 ```
 
 ---
@@ -103,18 +112,16 @@ cd bc-expressjs-centro-rehabilitacion-fisica-allan-benavides
 git branch -a
 
 # Cambiar a la semana que quieras trabajar
-git checkout week-05
+git checkout week-06
 
-# Levantar PostgreSQL (solo semana 05+)
+# Levantar base de datos (MongoDB para semana 06+)
 docker compose up -d
 
 # Instalar dependencias
 pnpm install
 
-# Para semanas 05+: configurar base de datos
-cp .env.example .env
-pnpm dlx prisma migrate dev --name init
-pnpm dlx prisma db seed
+# Ejecutar seed (insertar datos de prueba)
+pnpm seed
 
 # Ejecutar
 pnpm dev
@@ -128,8 +135,43 @@ pnpm dev
 - **Paquetes**: Solo `pnpm` (nunca npm/yarn)
 - **Código**: Inglés (variables, funciones)
 - **Documentación**: Español (READMEs)
-- **PKs**: UUID (`@default(uuid()) @db.Uuid`)
+- **PKs**: UUID (`@default(uuid()) @db.Uuid`) en Prisma, ObjectId en Mongoose
 - **Arquitectura**: 4 capas (routes → controllers → services → repositories)
+
+---
+
+## 📚 Semana 06 — MongoDB + Mongoose
+
+### Entidades Implementadas
+
+| Entidad | Tipo | Descripción |
+|---------|------|-------------|
+| `Therapist` | Secundaria | Terapeutas del centro |
+| `Session` | Principal | Sesiones de rehabilitación (con ref a Therapist) |
+
+### Endpoints
+
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| GET | `/api/v1/therapists?page=1&limit=10` | Listar terapeutas |
+| GET | `/api/v1/therapists/:id` | Obtener terapeuta |
+| POST | `/api/v1/therapists` | Crear terapeuta |
+| PUT | `/api/v1/therapists/:id` | Actualizar terapeuta |
+| DELETE | `/api/v1/therapists/:id` | Eliminar terapeuta |
+| GET | `/api/v1/sessions?page=1&limit=10` | Listar sesiones (con populate) |
+| GET | `/api/v1/sessions/:id` | Obtener sesión con terapeuta |
+| POST | `/api/v1/sessions` | Crear sesión |
+| PUT | `/api/v1/sessions/:id` | Actualizar sesión |
+| DELETE | `/api/v1/sessions/:id` | Eliminar sesión |
+
+### Funcionalidades
+
+- ✅ CRUD completo con Mongoose
+- ✅ Paginación con `countDocuments` + `skip/limit`
+- ✅ `.populate('therapist')` para obtener terapeuta completo
+- ✅ Manejo de errores: 11000 → 409, CastError → 400
+- ✅ Validación Zod para todos los endpoints
+- ✅ Seed con 3 terapeutas + 5 sesiones
 
 ---
 

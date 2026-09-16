@@ -243,7 +243,7 @@ _Creado: 2026-08-25 | Última actualización: Septiembre 2026_
 | 06 | MongoDB + Mongoose | ✅ | `week-06` |
 | 07 | Autenticación JWT | ✅ | `week-07` |
 | 08 | Autorización y Seguridad | ✅ | `week-08` |
-| 09 | Testing | ⏳ | Pendiente |
+| 09 | Testing | ✅ | `week-09` |
 | 10 | Uploads y Emails | ⏳ | Pendiente |
 | 11 | WebSockets | ⏳ | Pendiente |
 | 12 | Caching y Performance | ⏳ | Pendiente |

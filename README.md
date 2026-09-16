@@ -30,7 +30,7 @@ Gestión de sesiones de rehabilitación física para un centro especializado.
 | 05 | PostgreSQL + Prisma ORM | ✅ Completada | `week-05` |
 | 06 | MongoDB + Mongoose | ✅ Completada | `week-06` |
 | 07 | Autenticación JWT | ✅ Completada | `week-07` |
-| 08 | Autorización y Seguridad | ⏳ Pendiente | — |
+| 08 | Autorización y Seguridad | ✅ Completada | `week-08` |
 | 09 | Testing | ⏳ Pendiente | — |
 | 10 | Uploads y Emails | ⏳ Pendiente | — |
 | 11 | WebSockets | ⏳ Pendiente | — |
@@ -53,7 +53,9 @@ Gestión de sesiones de rehabilitación física para un centro especializado.
 | Zod | 4.3 | Validación de datos |
 | bcrypt | 5.1 | Hash de contraseñas |
 | jsonwebtoken | 9.0 | Autenticación JWT |
-| cookie-parser | 1.4 | Manejo de cookies |
+| helmet | 8.0 | Cabeceras HTTP de seguridad |
+| cors | 2.8 | Control de acceso cross-origin |
+| express-rate-limit | 7.5 | Limitación de tasa |
 
 ---
 
@@ -68,7 +70,7 @@ cd bc-expressjs-centro-rehabilitacion-fisica-allan-benavides
 git branch -a
 
 # Cambiar a la semana que quieras trabajar
-git checkout week-07
+git checkout week-08
 
 # Copiar variables de entorno
 cp .env.example .env
@@ -100,4 +102,4 @@ El contenido pedagógico (teoría, prácticas, proyectos) se encuentra en el rep
 
 ---
 
-_Semana 07 completada — Septiembre 2026_
+_Semana 08 completada — Septiembre 2026_

@@ -1,12 +1,19 @@
 import { Router } from 'express';
 import * as patientController from '../controllers/patient.controller';
 import { authMiddleware } from '../middlewares/auth.middleware';
+import { requireRole } from '../middlewares/requireRole';
 
 // ============================================
 // RUTAS DE PACIENTES
 // ============================================
 // Dominio: Centro de Rehabilitación Física
-// Todas las rutas están protegidas con authMiddleware.
+// Semana 08: RBAC — Roles diferenciados por ruta
+//
+// RBAC aplicado:
+//   GET    — autenticados (cualquier rol)
+//   POST   — autenticados (cualquier rol)
+//   PATCH  — autenticados (cualquier rol)
+//   DELETE — solo admin
 // ============================================
 
 const router = Router();
@@ -26,7 +33,7 @@ router.post('/', patientController.create);
 // PATCH /api/v1/patients/:id — actualizar un paciente
 router.patch('/:id', patientController.update);
 
-// DELETE /api/v1/patients/:id — eliminar un paciente
-router.delete('/:id', patientController.remove);
+// DELETE /api/v1/patients/:id — eliminar un paciente (solo admin)
+router.delete('/:id', requireRole('admin'), patientController.remove);
 
 export default router;

@@ -29,8 +29,8 @@ Gestión de sesiones de rehabilitación física para un centro especializado.
 | 04 | Validación y Error Handling | ✅ Completada | `week-04` |
 | 05 | PostgreSQL + Prisma ORM | ✅ Completada | `week-05` |
 | 06 | MongoDB + Mongoose | ✅ Completada | `week-06` |
-| 07 | Autenticación JWT | ⏳ Pendiente | — |
-| 08 | Autorización y Seguridad | ⏳ Pendiente | — |
+| 07 | Autenticación JWT | ✅ Completada | `week-07-auth_jwt` |
+| 08 | Autorización y Seguridad | ✅ Completada | `week-08` |
 | 09 | Testing | ⏳ Pendiente | — |
 | 10 | Uploads y Emails | ⏳ Pendiente | — |
 | 11 | WebSockets | ⏳ Pendiente | — |
@@ -181,4 +181,4 @@ El contenido pedagógico (teoría, prácticas, proyectos) se encuentra en el rep
 
 ---
 
-_Última actualización: Agosto 2026_
+_Última actualización: Septiembre 2026_

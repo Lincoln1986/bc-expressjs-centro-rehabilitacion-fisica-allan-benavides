@@ -1,228 +1,168 @@
-# 📋 Instrucciones de Trabajo — Allán Benavides
+# 📋 Instrucciones de Trabajo — Codebuff Agent
 
-## 🏗️ Estructura de Repositorios
+## 🏛️ Dominio Asignado
+**Centro de Rehabilitación Física**
 
-### Repositorio Guía (referencia)
-- **Ruta**: `C:\Users\sena\Documents\NALLA\Bootcamps\bc-expressjs`
-- **Propósito**: Fuente de verdad para todo el contenido del bootcamp
-- **Contenido**: Semanas 01-16 con teoría, prácticas, proyectos y rúbricas
-- **Acceso**: Solo lectura — NO editar directamente
-
-### Repositorio Personal (desarrollo)
-- **Ruta**: `C:\Users\sena\Documents\NALLA\Bootcamps\bc-expressjs-centro-rehabilitacion-fisica-allan-benavides`
-- **Propósito**: Donde se desarrollan y entregan las semanas/actividades
-- **GitHub**: [Repositorio remoto](https://github.com/allan-benavides/bc-expressjs-centro-rehabilitacion-fisica-allan-benavides)
-
----
-
-## 🎯 Dominio del Proyecto
-
-**Nombre**: Centro de Rehabilitación Física
-
-**Entidades principales**:
 | Entidad | Descripción |
 |---------|-------------|
 | `patients` | Pacientes del centro de rehabilitación |
-| `therapists` | Terapeutas/fisioterapeutas que atienden pacientes |
+| `therapists` | Terapeutas/fisioterapeutas |
 | `sessions` | Sesiones de rehabilitación programadas |
-| `exercises` | Ejercicios terapéuticos asignados a pacientes |
+| `exercises` | Ejercicios terapéuticos asignados |
 
 ---
 
-## 🌿 Método de Entrega por Ramas
+## 📁 Repositorios
 
-Cada semana se entrega en una **rama separada** con este formato:
+### 1. Repositorio Guía (Referencia)
+- **Ruta**: `C:\Users\novio\Documents\GitHub\Bootcamps\bc-expressjs`
+- **Propósito**: Contenido pedagógico del bootcamp (teoría, prácticas, proyectos)
+- **Estructura por semana**: `bootcamp/week-XX-tema/`
+  - `README.md` → Instrucciones y objetivos
+  - `rubrica-evaluacion.md` → Criterios de evaluación
+  - `1-teoria/` → Material teórico
+  - `2-practicas/` → Ejercicios guiados
+  - `3-proyecto/` → Proyecto semanal
+  - `4-recursos/` → Recursos adicionales
 
-```
-week-XX-nombre_semana
-```
-
-**Ejemplo**:
-- `week-01-nodejs_fundamentals`
-- `week-02-express_intro`
-- `week-03-rest_api_arquitectura`
-
-### Flujo de trabajo
-
-1. **Leer la semana** del repositorio guía (`bc-expressjs/bootcamp/week-XX-*/`)
-2. **Crear una nueva rama** en el repositorio personal
-3. **Crear una carpeta** con el mismo nombre de la semana
-4. **Desarrollar** todo lo solicitado en esa semana
-5. **Subir la rama** a GitHub para entrega
-
-### Ramas existentes
-
-| Rama | Estado |
-|------|--------|
-| `main` | Rama principal (protegida) |
-| `week-01` | ✅ Completada (semana 01) |
+### 2. Repositorio Personal (Desarrollo)
+- **Ruta**: `C:\Users\novio\Documents\GitHub\Bootcamps\bc-expressjs-centro-rehabilitacion-fisica-allan-benavides`
+- **Propósito**: Desarrollo de las semanas/actividades del bootcamp
+- **GitHub**: Lincoln1986/bc-expressjs-centro-rehabilitacion-fisica-allan-benavides
 
 ---
 
-## 📚 Cómo Trabajar una Semana
+## 🔄 Flujo de Trabajo
 
-### Paso 1: Leer el contenido del repositorio guía
-
-```
-bc-expressjs/bootcamp/week-XX-nombre_semana/
-├── README.md                 # Objetivos y estructura de la semana
-├── rubrica-evaluacion.md     # Criterios de evaluación
-├── 1-teoria/                 # Material teórico
-├── 2-practicas/              # Ejercicios guiados
-├── 3-proyecto/               # Proyecto integrador
-│   ├── README.md             # Instrucciones del proyecto
-│   └── starter/              # Código inicial para adaptar
-├── 4-recursos/               # Recursos adicionales
-└── 5-glosario/               # Glosario de términos
-```
-
-### Paso 2: Crear rama y carpeta en el repositorio personal
-
-```bash
-# Navegar al repositorio personal
-cd C:\Users\sena\Documents\NALLA\Bootcamps\bc-expressjs-centro-rehabilitacion-fisica-allan-benavides
-
-# Crear y cambiar a la nueva rama
-git checkout -b week-XX-nombre_semana
-
-# Crear la carpeta de la semana
-mkdir week-XX-nombre_semana
-```
-
-### Paso 3: Desarrollar adaptando al dominio
-
-- Tomar el código del `starter/` como base
-- **Renombrar** `items` por la entidad de tu dominio (ej: `patients`, `sessions`)
-- **Ajustar** los campos de los tipos/interfaces a tu dominio
-- **Implementar** toda la lógica requerida por la semana
-- **Asegurar** que `pnpm build` compile sin errores TypeScript
-
-### Paso 4: Entregar
-
-```bash
-git add .
-git commit -m "feat: week-XX — [descripción breve]"
-git push origin week-XX-nombre_semana
-```
+1. **El usuario solicita trabajar una semana específica** (ej: "trabajemos la semana 08")
+2. **Leer la semana en el repositorio guía**: `bc-expressjs/bootcamp/week-XX-tema/README.md`
+3. **Crear una nueva rama** en el repositorio personal: `week-XX`
+4. **Desarrollar** la funcionalidad solicitada aplicando el dominio del proyecto
+5. **Subir la rama** a GitHub con `git push`
 
 ---
 
-## 🛠️ Stack y Convenciones Técnicas
+## 📊 Estado de Semanas
 
-### Paquetes
-- **Gestor**: `pnpm` (NUNCA `npm` ni `yarn`)
-- **Versión exacta**: Sin `^`, `~` o rangos en `package.json`
+| Semana | Tema | Estado | Rama |
+|--------|------|--------|------|
+| 01 | Node.js Fundamentals | ✅ | `week-01` |
+| 02 | Express Intro | ✅ | `week-02` |
+| 03 | REST API Arquitectura | ✅ | `week-03` |
+| 04 | Validación y Error Handling | ✅ | `week-04` |
+| 05 | PostgreSQL + Prisma | ✅ | `week-05` |
+| 06 | MongoDB + Mongoose | ✅ | `week-06` |
+| 07 | Autenticación JWT | ✅ | `week-07-auth_jwt` |
+| 08 | Autorización y Seguridad | ✅ | `week-08` |
+| 09 | Testing | ⏳ | Pendiente |
+| 10 | Uploads y Emails | ⏳ | Pendiente |
+| 11 | WebSockets | ⏳ | Pendiente |
+| 12 | Caching y Performance | ⏳ | Pendiente |
+| 13 | OpenAPI y Swagger | ⏳ | Pendiente |
+| 14 | Docker | ⏳ | Pendiente |
+| 15 | CI/CD y Deployment | ⏳ | Pendiente |
+| 16 | Proyecto Final | ⏳ | Pendiente |
 
-### Tecnologías
-- Node.js 22+
-- Express 5
-- TypeScript 5.x (strict mode)
-- Prisma (cuando aplique)
-- Zod (validación)
-- Jest + Supertest (testing)
+---
 
-### Arquitectura en Capas
+## 🛠️ Stack Tecnológico
+
+| Tecnología | Versión | Uso |
+|------------|---------|-----|
+| Node.js | 22+ | Runtime |
+| TypeScript | 5.x | Tipado estático |
+| Express | 5.x | Framework HTTP |
+| Prisma | 6.x | ORM (PostgreSQL) |
+| Mongoose | 8-9.x | ODM (MongoDB) |
+| Zod | 3.x | Validación de datos |
+| bcrypt | 5.x | Hash de contraseñas |
+| JWT | 9.x | Autenticación |
+| Winston | 3.x | Logging |
+| Morgan | 1.x | HTTP logging |
+
+---
+
+## 📁 Arquitectura del Proyecto (4 Capas)
+
 ```
 src/
-├── app.ts              # Configuración Express
-├── server.ts           # Entry point
-├── routes/             # Mapeo URL → controller
-├── controllers/        # Req → Service → Res (thin)
-├── services/           # Lógica de negocio
-├── repositories/       # Acceso a datos
-├── validators/         # Schemas Zod
-├── types/              # Interfaces y tipos
-└── utils/              # Funciones utilitarias
-```
-
-### Convenciones de Código
-- **Código**: Inglés (variables, funciones, clases)
-- **Documentación**: Español (READMEs, teoría, comentarios educativos)
-- **Nomenclatura**: PascalCase para tipos, camelCase para funciones
-- **Archivos**: kebab-case para rutas (`patient.routes.ts`)
-- **Tipos**: Interfaces para dominio, DTOs para transferencia
-- **PKs**: `id String @id @default(uuid()) @db.Uuid` (en Prisma)
-
-### Contratos de Respuesta
-```json
-// Listado paginado
-{ "data": [...], "total": 20, "page": 1, "limit": 5 }
-
-// Recurso individual
-{ "data": { "id": "uuid", ... } }
-
-// Error
-{ "error": "Not Found", "message": "Patient not found" }
-```
-
-### Status Codes
-| Método | Éxito | Error |
-|--------|-------|-------|
-| GET | 200 | 404 |
-| POST | 201 | 400 |
-| PUT | 200 | 400, 404 |
-| DELETE | 204 | 404 |
-
----
-
-## 📊 Estructura por Semana (entrega)
-
-```
-week-XX-nombre_semana/
-├── README.md              # Descripción de tu implementación
-├── src/
-│   ├── app.ts
-│   ├── server.ts
-│   ├── types.ts           # Tipos de TU dominio
-│   ├── routes/
-│   ├── controllers/
-│   ├── services/
-│   └── repositories/
-├── package.json
-├── tsconfig.json
-└── .env
+├── lib/                    # Prisma + Mongoose connections
+├── config/                 # Logger (Winston + Morgan)
+├── errors/                 # AppError personalizado
+├── middlewares/             # errorHandler + notFound
+├── models/                 # Mongoose schemas (MongoDB)
+├── schemas/                # Zod validation (create + update)
+├── repositories/           # CRUD + manejo de errores
+├── services/               # Lógica de negocio
+├── controllers/            # Thin controllers (req → service → res)
+├── routes/                 # Mapeo URL → controller
+├── utils/                  # Utilidades (JWT, helpers)
+├── app.ts                  # Configuración Express + middleware
+├── server.ts               # Entry point + graceful shutdown
+└── seed.ts                 # Datos de prueba
 ```
 
 ---
 
-## 🔄 Resumen del Proceso
+## 📋 Convenciones
 
-```
-┌─────────────────────────────┐
-│  1. Usuario indica semana   │
-└──────────────┬──────────────┘
-               ▼
-┌─────────────────────────────┐
-│  2. Leer semana en guía     │
-│  bc-expressjs/bootcamp/     │
-└──────────────┬──────────────┘
-               ▼
-┌─────────────────────────────┐
-│  3. Crear rama en repo      │
-│  personal                   │
-└──────────────┬──────────────┘
-               ▼
-┌─────────────────────────────┐
-│  4. Desarrollar adaptando   │
-│  al dominio de rehab.       │
-└──────────────┬──────────────┘
-               ▼
-┌─────────────────────────────┐
-│  5. Push a GitHub           │
-└─────────────────────────────┘
+- **Ramas**: `week-XX` o `week-XX-tema` (una rama por semana)
+- **Paquetes**: Solo `pnpm` (nunca npm/yarn)
+- **Código**: Inglés (variables, funciones)
+- **Documentación**: Español (READMEs)
+- **PKs**: UUID en Prisma, ObjectId en Mongoose
+- **API Versioning**: `/api/v1/...`
+- **Entorno**: `.env.example` para variables de entorno
+
+---
+
+## 🔧 Comandos Útiles
+
+```bash
+# Ver ramas disponibles
+git branch -a
+
+# Cambiar a una semana
+git checkout week-XX
+
+# Crear nueva rama desde main
+git checkout main
+git checkout -b week-XX
+
+# Levantar Docker (si aplica)
+docker compose up -d
+
+# Instalar dependencias
+pnpm install
+
+# Ejecutar seed
+pnpm seed
+
+# Ejecutar en desarrollo
+pnpm dev
+
+# Typecheck
+pnpm tsc --noEmit
 ```
 
 ---
 
-## 📝 Notas Importantes
+## ⚠️ Notas Importantes
 
-- **Siempre** crear una rama nueva para cada semana
-- **Nunca** modificar `main` directamente
-- **Leer** `rubrica-evaluacion.md` para conocer criterios de evaluación
-- **Verificar** que `pnpm build` pase antes de entregar
-- **Adaptar** todo al dominio de Centro de Rehabilitación Física
-- **Nombre** de carpeta = nombre de rama = semana del guía
+1. **Siempre leer la semana del repositorio guía antes de desarrollar**
+2. **Cada semana tiene su propia rama** — nunca trabajar en `main`
+3. **Aplicar siempre el dominio** "Centro de Rehabilitación Física"
+4. **Seguir la arquitectura de 4 capas** establecida
+5. **Validar con Zod** todos los endpoints de entrada
+6. **Manejar errores** con AppError y el errorHandler middleware
 
 ---
 
-_Creado: 2026-08-25 | Última actualización: 2026-08-25_
+## 📚 Enlaces
+
+- Repositorio Guía: https://github.com/ergrato-dev/bc-expressjs
+- Repositorio Personal: https://github.com/Lincoln1986/bc-expressjs-centro-rehabilitacion-fisica-allan-benavides
+
+---
+
+*Última actualización: Septiembre 2026*

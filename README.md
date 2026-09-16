@@ -31,7 +31,7 @@ Gestión de sesiones de rehabilitación física para un centro especializado.
 | 06 | MongoDB + Mongoose | ✅ Completada | `week-06` |
 | 07 | Autenticación JWT | ✅ Completada | `week-07` |
 | 08 | Autorización y Seguridad | ✅ Completada | `week-08` |
-| 09 | Testing | ⏳ Pendiente | — |
+| 09 | Testing | ✅ Completada | `week-09` |
 | 10 | Uploads y Emails | ⏳ Pendiente | — |
 | 11 | WebSockets | ⏳ Pendiente | — |
 | 12 | Caching y Performance | ⏳ Pendiente | — |
@@ -39,6 +39,27 @@ Gestión de sesiones de rehabilitación física para un centro especializado.
 | 14 | Docker | ⏳ Pendiente | — |
 | 15 | CI/CD y Deployment | ⏳ Pendiente | — |
 | 16 | Proyecto Final | ⏳ Pendiente | — |
+
+---
+
+## 🧪 Suite de Testing
+
+### Unit Tests (21 tests)
+- `auth.service.test.ts` — 10 tests
+- `patient.service.test.ts` — 11 tests
+
+### Integration Tests (25 tests)
+- `auth.integration.test.ts` — 12 tests
+- `patient.integration.test.ts` — 13 tests
+
+### Total: 46 tests ✅
+
+### Ejecutar tests
+```bash
+npm test              # ejecutar todos los tests
+npm run test:watch    # modo watch
+npm run test:coverage # reporte de cobertura
+```
 
 ---
 
@@ -50,12 +71,9 @@ Gestión de sesiones de rehabilitación física para un centro especializado.
 | TypeScript | 5.8 | Tipado estático |
 | Express | 5.1 | Framework HTTP |
 | Mongoose | 9.4 | ODM (MongoDB) |
-| Zod | 4.3 | Validación de datos |
-| bcrypt | 5.1 | Hash de contraseñas |
-| jsonwebtoken | 9.0 | Autenticación JWT |
-| helmet | 8.0 | Cabeceras HTTP de seguridad |
-| cors | 2.8 | Control de acceso cross-origin |
-| express-rate-limit | 7.5 | Limitación de tasa |
+| Jest | 29.7 | Test runner |
+| Supertest | 7.1 | Testing HTTP |
+| mongodb-memory-server | 10.1 | MongoDB en RAM |
 
 ---
 
@@ -70,7 +88,7 @@ cd bc-expressjs-centro-rehabilitacion-fisica-allan-benavides
 git branch -a
 
 # Cambiar a la semana que quieras trabajar
-git checkout week-08
+git checkout week-09
 
 # Copiar variables de entorno
 cp .env.example .env
@@ -102,4 +120,4 @@ El contenido pedagógico (teoría, prácticas, proyectos) se encuentra en el rep
 
 ---
 
-_Semana 08 completada — Septiembre 2026_
+_Semana 09 completada — Septiembre 2026_

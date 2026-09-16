@@ -41,7 +41,7 @@ app.use('/api/v1/admin', adminRouter);
 
 // ─── 6. Health check ────────────────────────────────────────────────────────
 app.get('/health', (_req, res) => {
-  res.status(200).json({ status: 'ok', week: '08', domain: 'Centro de Rehabilitación Física' });
+  res.status(200).json({ status: 'ok', week: '09', domain: 'Centro de Rehabilitación Física' });
 });
 
 // ─── 7. Middlewares de errores (siempre al final) ───────────────────────────

@@ -1,7 +1,7 @@
 {
-  "name": "week06-rehabilitacion-mongoose",
+  "name": "week07-rehabilitacion-auth-jwt",
   "version": "1.0.0",
-  "description": "Week 06 — API with MongoDB + Mongoose for Centro de Rehabilitación Física",
+  "description": "Week 07 — API with JWT Authentication for Centro de Rehabilitación Física",
   "main": "src/server.ts",
   "engines": {
     "node": ">=22.0.0"
@@ -14,13 +14,19 @@
     "seed": "tsx src/seed.ts"
   },
   "dependencies": {
+    "bcrypt": "5.1.1",
+    "cookie-parser": "1.4.7",
     "dotenv": "16.5.0",
     "express": "5.1.0",
+    "jsonwebtoken": "9.0.2",
     "mongoose": "9.4.1",
     "zod": "4.3.6"
   },
   "devDependencies": {
+    "@types/bcrypt": "5.0.2",
+    "@types/cookie-parser": "1.4.8",
     "@types/express": "5.0.3",
+    "@types/jsonwebtoken": "9.0.9",
     "@types/node": "22.15.21",
     "tsx": "4.19.4",
     "typescript": "5.8.3"

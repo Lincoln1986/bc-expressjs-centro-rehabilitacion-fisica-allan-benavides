@@ -1,24 +1,33 @@
-// ============================================
-// APP — Configuración Express
-// Centro de Rehabilitación Física — Semana 06
-// ============================================
-
 import express from 'express';
-import therapistRouter from './routes/therapist.routes';
-import sessionRouter from './routes/session.routes';
+import cookieParser from 'cookie-parser';
+import authRouter from './routes/auth.routes';
+import patientRouter from './routes/patient.routes';
 import { errorHandler } from './middlewares/errorHandler';
 import { notFound } from './middlewares/notFound';
+
+// ============================================
+// APP — Configuración Express
+// ============================================
+// Dominio: Centro de Rehabilitación Física
+// Semana 07: Autenticación JWT
+// ============================================
 
 export const app = express();
 
 app.use(express.json());
+app.use(cookieParser());
 
+// Rutas de autenticación
+app.use('/api/v1/auth', authRouter);
+
+// Rutas de pacientes (recurso principal del dominio)
+app.use('/api/v1/patients', patientRouter);
+
+// Ruta de health check
 app.get('/health', (_req, res) => {
-  res.json({ status: 'ok', week: '06', domain: 'Centro de Rehabilitación Física' });
+  res.json({ status: 'ok', week: '07', domain: 'Centro de Rehabilitación Física' });
 });
 
-app.use('/api/v1/therapists', therapistRouter);
-app.use('/api/v1/sessions', sessionRouter);
-
+// Middlewares de errores (siempre al final)
 app.use(notFound);
 app.use(errorHandler);

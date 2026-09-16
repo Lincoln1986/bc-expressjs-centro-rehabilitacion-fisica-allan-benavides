@@ -242,7 +242,7 @@ _Creado: 2026-08-25 | Última actualización: Septiembre 2026_
 | 05 | PostgreSQL + Prisma | ✅ | `week-05` |
 | 06 | MongoDB + Mongoose | ✅ | `week-06` |
 | 07 | Autenticación JWT | ✅ | `week-07` |
-| 08 | Autorización y Seguridad | ⏳ | Pendiente |
+| 08 | Autorización y Seguridad | ✅ | `week-08` |
 | 09 | Testing | ⏳ | Pendiente |
 | 10 | Uploads y Emails | ⏳ | Pendiente |
 | 11 | WebSockets | ⏳ | Pendiente |

@@ -31,7 +31,7 @@ Gestión de sesiones de rehabilitación física para un centro especializado.
 | 06 | MongoDB + Mongoose | ✅ Completada | `week-06` |
 | 07 | Autenticación JWT | ✅ Completada | `week-07-auth_jwt` |
 | 08 | Autorización y Seguridad | ✅ Completada | `week-08` |
-| 09 | Testing | ⏳ Pendiente | — |
+| 09 | Testing | ✅ Completada | `week-09` |
 | 10 | Uploads y Emails | ⏳ Pendiente | — |
 | 11 | WebSockets | ⏳ Pendiente | — |
 | 12 | Caching y Performance | ⏳ Pendiente | — |

@@ -54,7 +54,7 @@
 | 06 | MongoDB + Mongoose | ✅ | `week-06` |
 | 07 | Autenticación JWT | ✅ | `week-07-auth_jwt` |
 | 08 | Autorización y Seguridad | ✅ | `week-08` |
-| 09 | Testing | ⏳ | Pendiente |
+| 09 | Testing | ✅ | `week-09` |
 | 10 | Uploads y Emails | ⏳ | Pendiente |
 | 11 | WebSockets | ⏳ | Pendiente |
 | 12 | Caching y Performance | ⏳ | Pendiente |

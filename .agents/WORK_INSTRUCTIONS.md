@@ -227,4 +227,27 @@ week-XX/
 
 ---
 
-_Creado: 2026-08-25 | Última actualización: 2026-08-30_
+_Creado: 2026-08-25 | Última actualización: Septiembre 2026_
+
+---
+
+## 📈 Estado del Bootcamp
+
+| Semana | Tema | Estado | Rama |
+|--------|------|--------|------|
+| 01 | Node.js Fundamentals | ✅ | `week-01` |
+| 02 | Express Intro | ✅ | `week-02` |
+| 03 | REST API Arquitectura | ✅ | `week-03` |
+| 04 | Validación y Error Handling | ✅ | `week-04` |
+| 05 | PostgreSQL + Prisma | ✅ | `week-05` |
+| 06 | MongoDB + Mongoose | ✅ | `week-06` |
+| 07 | Autenticación JWT | ✅ | `week-07` |
+| 08 | Autorización y Seguridad | ⏳ | Pendiente |
+| 09 | Testing | ⏳ | Pendiente |
+| 10 | Uploads y Emails | ⏳ | Pendiente |
+| 11 | WebSockets | ⏳ | Pendiente |
+| 12 | Caching y Performance | ⏳ | Pendiente |
+| 13 | OpenAPI y Swagger | ⏳ | Pendiente |
+| 14 | Docker | ⏳ | Pendiente |
+| 15 | CI/CD y Deployment | ⏳ | Pendiente |
+| 16 | Proyecto Final | ⏳ | Pendiente |
